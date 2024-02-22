@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="add users app and rename MainServer to games">
-      <change afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="new migrations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectGames/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectGames/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectGames/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectGames/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +56,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "proofread",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -146,7 +143,7 @@
       <workItem from="1708436697546" duration="3310000" />
       <workItem from="1708445994966" duration="5000" />
       <workItem from="1708602366515" duration="65000" />
-      <workItem from="1708604813010" duration="12872000" />
+      <workItem from="1708604813010" duration="14393000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -228,7 +225,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708617899572</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="create custom user. delete old migrations">
+      <option name="closed" value="true" />
+      <created>1708618543714</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708618543714</updated>
+    </task>
+    <task id="LOCAL-00012" summary="new migrations">
+      <option name="closed" value="true" />
+      <created>1708618559557</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708618559557</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +269,8 @@
     <MESSAGE value="add submodels dir" />
     <MESSAGE value="register models in admin panel" />
     <MESSAGE value="add users app and rename MainServer to games" />
-    <option name="LAST_COMMIT_MESSAGE" value="add users app and rename MainServer to games" />
+    <MESSAGE value="create custom user. delete old migrations" />
+    <MESSAGE value="new migrations" />
+    <option name="LAST_COMMIT_MESSAGE" value="new migrations" />
   </component>
 </project>
