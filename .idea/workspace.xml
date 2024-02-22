@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="new models for games and migrations">
-      <change afterPath="$PROJECT_DIR$/MainServer/submodels/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainServer/submodels/game.py" afterDir="false" />
+    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="register models in admin panel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainServer/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainServer/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainServer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainServer/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainServer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainServer/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CollectGames/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectGames/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CollectGames/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectGames/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/migrations/0002_remove_game_status_game_is_published.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/migrations/0002_remove_game_status_game_is_published.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/migrations/0003_gamestudio_game_slug_game_studio.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/migrations/0003_gamestudio_game_slug_game_studio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/migrations/0004_alter_game_slug.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/migrations/0004_alter_game_slug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/migrations/0005_platform_release.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/migrations/0005_platform_release.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/migrations/0006_game_tags_gameslinks.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/migrations/0006_game_tags_gameslinks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/submodels/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/submodels/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/submodels/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/submodels/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +159,7 @@
       <workItem from="1708436697546" duration="3310000" />
       <workItem from="1708445994966" duration="5000" />
       <workItem from="1708602366515" duration="65000" />
-      <workItem from="1708604813010" duration="10751000" />
+      <workItem from="1708604813010" duration="12333000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -204,7 +217,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708615264880</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add submodels dir">
+      <option name="closed" value="true" />
+      <created>1708616497815</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708616497815</updated>
+    </task>
+    <task id="LOCAL-00009" summary="register models in admin panel">
+      <option name="closed" value="true" />
+      <created>1708616519463</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708616519463</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +258,8 @@
     <MESSAGE value="update settings.py" />
     <MESSAGE value="add docker-compose for future work with Postgres" />
     <MESSAGE value="new models for games and migrations" />
-    <option name="LAST_COMMIT_MESSAGE" value="new models for games and migrations" />
+    <MESSAGE value="add submodels dir" />
+    <MESSAGE value="register models in admin panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="register models in admin panel" />
   </component>
 </project>

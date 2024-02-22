@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     "taggit",
-    'MainServer.apps.MainServerConfig'
+    'games.apps.GamesConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [

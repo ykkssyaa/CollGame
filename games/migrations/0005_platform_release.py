@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('MainServer', '0004_alter_game_slug'),
+        ('games', '0004_alter_game_slug'),
     ]
 
     operations = [
@@ -23,8 +23,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('release_date', models.DateField()),
-                ('game', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='MainServer.game')),
-                ('platform', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='MainServer.platform')),
+                ('game', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='games.game')),
+                ('platform', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='games.platform')),
             ],
         ),
     ]

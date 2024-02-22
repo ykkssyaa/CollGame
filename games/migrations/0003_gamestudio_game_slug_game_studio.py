@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('MainServer', '0002_remove_game_status_game_is_published'),
+        ('games', '0002_remove_game_status_game_is_published'),
     ]
 
     operations = [
@@ -26,6 +26,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='game',
             name='studio',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.PROTECT, to='MainServer.gamestudio'),
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.PROTECT, to='games.gamestudio'),
         ),
     ]
