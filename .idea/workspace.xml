@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="add docker-compose for future work with Postgres">
+    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="new models for games and migrations">
+      <change afterPath="$PROJECT_DIR$/MainServer/submodels/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainServer/submodels/game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectGames/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectGames/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainServer/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainServer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainServer/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainServer/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +146,7 @@
       <workItem from="1708436697546" duration="3310000" />
       <workItem from="1708445994966" duration="5000" />
       <workItem from="1708602366515" duration="65000" />
-      <workItem from="1708604813010" duration="9720000" />
+      <workItem from="1708604813010" duration="10751000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -193,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708606530977</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="new models for games and migrations">
+      <option name="closed" value="true" />
+      <created>1708615264880</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708615264880</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +228,7 @@
     <MESSAGE value="delegate urls" />
     <MESSAGE value="update settings.py" />
     <MESSAGE value="add docker-compose for future work with Postgres" />
-    <option name="LAST_COMMIT_MESSAGE" value="add docker-compose for future work with Postgres" />
+    <MESSAGE value="new models for games and migrations" />
+    <option name="LAST_COMMIT_MESSAGE" value="new models for games and migrations" />
   </component>
 </project>
