@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "taggit",
     'games.apps.GamesConfig',
     'users.apps.UsersConfig',
+    'activity.apps.ActivityConfig'
 ]
 
 MIDDLEWARE = [

@@ -18,11 +18,4 @@ class UserList(models.Model):
     games = models.ManyToManyField('games.Game', related_name='games_in_list', blank=True)
 
 
-class GameDictionary(models.Model):
-    name = models.CharField(max_length=255)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    game = models.ForeignKey('games.Game', on_delete=models.CASCADE)
-    created = models.DateField(auto_now_add=True)
-    updated = models.DateField(auto_now=True)
-    description = models.TextField(blank=True)
-    # TODO: добавить статус
+
