@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="delegate urls">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CollGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CollGame.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="add docker-compose for future work with Postgres">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CollectGames/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectGames/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainServer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainServer/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -28,6 +29,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -139,7 +143,7 @@
       <workItem from="1708436697546" duration="3310000" />
       <workItem from="1708445994966" duration="5000" />
       <workItem from="1708602366515" duration="65000" />
-      <workItem from="1708604813010" duration="1626000" />
+      <workItem from="1708604813010" duration="9720000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -173,17 +177,46 @@
       <option name="project" value="LOCAL" />
       <updated>1708438209519</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update settings.py">
+      <option name="closed" value="true" />
+      <created>1708606473861</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708606473861</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add docker-compose for future work with Postgres">
+      <option name="closed" value="true" />
+      <created>1708606530977</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708606530977</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init project" />
     <MESSAGE value="init module" />
     <MESSAGE value="little fixes and settings" />
     <MESSAGE value="delegate urls" />
-    <option name="LAST_COMMIT_MESSAGE" value="delegate urls" />
+    <MESSAGE value="update settings.py" />
+    <MESSAGE value="add docker-compose for future work with Postgres" />
+    <option name="LAST_COMMIT_MESSAGE" value="add docker-compose for future work with Postgres" />
   </component>
 </project>
