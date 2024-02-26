@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser, User
 from django.db import models
 
+
 class User(AbstractUser):
     photo = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True, null=True, verbose_name='photo')
     steam_id = models.CharField(max_length=255)

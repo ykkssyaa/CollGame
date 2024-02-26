@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Результат поиска:  {{ game_name }}</h1>
+
+<ul>
+    {% for game in games %}
+    <li> <a href="/games/{{ game.slug }}">{{ game.name }}</a> </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

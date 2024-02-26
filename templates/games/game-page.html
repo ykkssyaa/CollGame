@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ game.name }}</h1>
+<img src="../media/{{ game.poster }}" style="width: 25%;" alt="{{ game.name }} poster"/>
+
+<div>
+    <h2>Описание</h2>
+    <p>
+        {{ game.description }}
+    </p>
+</div>
+
+<div>
+
+    <p> <b>Студия</b> - {{ game.studio }}</p>
+
+    <h4>Теги: </h4>
+    <ul>
+        {% for tag in game.tags.names %}
+        <li>{{ tag }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

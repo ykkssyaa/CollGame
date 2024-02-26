@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="icon" type="image/png" href="{% url 'favicon' %} " >
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+<body>
+
+    <header>
+
+        <img src="{% static 'img/gamepad.ico' %}" alt="icon">
+
+        <h2>CollGame - трекер коллекции видеоигр!</h2>
+
+        <form action="{% url 'find_games' %}" method="get">
+            <label>
+                <input name="name" type="text" placeholder="Search...">
+            </label>
+            <input type="submit" value="Search">
+        </form>
+
+    </header>
+    <hr>
+
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+    <hr>
+    <footer>
+        <h3>Footer</h3>
+    </footer>
+
+</body>
+</html>
