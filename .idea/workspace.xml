@@ -4,19 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="registration and login">
-      <change afterPath="$PROJECT_DIR$/templates/elements/activity/reviews_list_element.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/elements/games/games_list_element.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/profile_base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/profile_games.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/profile_info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/profile_reviews.html" afterDir="false" />
+    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="templates, user profile alpha">
+      <change afterPath="$PROJECT_DIR$/activity/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activity/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CollectGames/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectGames/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/activity/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/elements/user_nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/user_nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/games/find-result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/games/find-result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/games/game-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/games/game-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/profile_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_info.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -177,7 +173,7 @@
       <workItem from="1709049989035" duration="3212000" />
       <workItem from="1709063236078" duration="904000" />
       <workItem from="1709121913483" duration="11939000" />
-      <workItem from="1709202801214" duration="7230000" />
+      <workItem from="1709202801214" duration="9292000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -307,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709204900795</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="templates, user profile alpha">
+      <option name="closed" value="true" />
+      <created>1709210362738</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1709210362738</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,6 +345,7 @@
     <MESSAGE value="activity models" />
     <MESSAGE value="base templates, base.html, game finding result page, game page" />
     <MESSAGE value="registration and login" />
-    <option name="LAST_COMMIT_MESSAGE" value="registration and login" />
+    <MESSAGE value="templates, user profile alpha" />
+    <option name="LAST_COMMIT_MESSAGE" value="templates, user profile alpha" />
   </component>
 </project>

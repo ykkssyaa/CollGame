@@ -2,8 +2,8 @@
 <nav class="user_nav">
 
     {% if not user.is_authenticated %}
-        <a href="{% url 'users:login' %}?next={{ request.path }}"> Login</a>
-
+        <a href="{% url 'users:login' %}?next={{ request.path }}"> Войти</a>
+        <a href="{% url 'users:register' %}?next={{ request.path }}">Регистрация</a>
     {% else %}
         <p id="username"> {{ user.username }} </p>
 
