@@ -3,3 +3,6 @@
 /.venv/
 media/
 db.sqlite3
+
+/static/admin
+/static/django_extensions

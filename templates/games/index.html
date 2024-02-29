@@ -2,5 +2,22 @@
 {% block content %}
 
     <h1>Главная страница</h1>
+    <div class="hello_user">
+        {% if user.is_authenticated %}
+            
+            {% if user.first_name != '' %}
+                <p>Привет, {{ user.first_name }}!</p>
+            {% else %}
+                <p>Привет, {{ user.username }}!</p>
+            {% endif %}
+
+        {% else %}
+            <p>
+                <a href="{% url 'users:login' %}">Login</a>
+            </p>
+
+        {% endif %}
+
+    </div>
 
 {% endblock %}

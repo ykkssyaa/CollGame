@@ -21,7 +21,7 @@ class Game(models.Model):
     slug = models.SlugField(max_length=255, db_index=True, unique=True)
     studio = models.ForeignKey('GameStudio', on_delete=models.PROTECT, null=True)
 
-    poster = models.ImageField(upload_to=game_poster_path)
+    poster = models.ImageField(upload_to=game_poster_path, null=True, blank=True)
     tags = TaggableManager()
 
     def __str__(self):
@@ -53,4 +53,5 @@ class Release(models.Model):
 
 class GamesLinks(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, default=" ")
     link = models.URLField()

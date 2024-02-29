@@ -1,0 +1,22 @@
+{% if user.is_authenticated %}
+    <div class="user_panel">
+
+        <div class="add_button">
+            {% if game not in user.games.all %}
+
+                <form method="POST" action="{% url 'add_game' game_slug=game.slug %}">
+                    {% csrf_token %}
+                    <button type="submit">Добавить в коллекцию</button>
+                </form>
+
+            {% else %}
+
+                <form method="POST" action="{% url 'delete_game' game_slug=game.slug %}">
+                    {% csrf_token %}
+                    <button type="submit">Удалить из коллекции</button>
+                </form>
+
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

@@ -11,7 +11,7 @@
 
     <header>
 
-        <img src="{% static 'img/gamepad.ico' %}" alt="icon">
+        <a href="/"> <img src="{% static 'img/gamepad.ico' %}" alt="icon"></a>
 
         <h2>CollGame - трекер коллекции видеоигр!</h2>
 
@@ -21,6 +21,8 @@
             </label>
             <input type="submit" value="Search">
         </form>
+
+        {% include 'elements/user_nav.html' %}
 
     </header>
     <hr>
@@ -35,7 +37,10 @@
 
     <hr>
     <footer>
-        <h3>Footer</h3>
+        <a href="/"> <img src="{% static 'img/gamepad.ico' %}" alt="icon" style="width: 35px"></a>
+        <a href="/"> Главная страница</a>
+        <a href="{% url 'terms' %}"> Пользовательское соглашение </a>
+        <a href="https://vk.com/ykkssyaa">VK</a>
     </footer>
 
 </body>

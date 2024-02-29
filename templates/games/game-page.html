@@ -1,26 +1,50 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>{{ game.name }}</h1>
-<img src="../media/{{ game.poster }}" style="width: 25%;" alt="{{ game.name }} poster"/>
+<div class="game_info">
+    <h1>{{ game.name }}</h1>
+    <img src="../media/{{ game.poster }}" style="width: 25%;" alt="{{ game.name }} poster"/>
 
-<div>
-    <h2>Описание</h2>
-    <p>
-        {{ game.description }}
-    </p>
+    <div class="main_game_info">
+        <h2>Описание</h2>
+        <p>
+            {{ game.description }}
+        </p>
+    </div>
+
+    <div class="additional_game_info">
+
+        <p> <b>Студия</b> - {{ game.studio }}</p>
+
+        <h4>Теги: </h4>
+        <ul>
+            {% for tag in game.tags.names %}
+            <li>{{ tag }}</li>
+            {% endfor %}
+        </ul>
+
+        <h4> Ссылки: </h4>
+        <ul>
+            {% for link in links %}
+            <li><a href="{{ link.link }}">{{ link.name }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <h4> Релизы: </h4>
+        {% if releases %}
+            <ul>
+                {% for release in releases %}
+                <li>{{ release.platform.name }} - {{ release.release_date }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Релизов ещё нет</p>
+        {% endif %}
+
+    </div>
+
 </div>
 
-<div>
-
-    <p> <b>Студия</b> - {{ game.studio }}</p>
-
-    <h4>Теги: </h4>
-    <ul>
-        {% for tag in game.tags.names %}
-        <li>{{ tag }}</li>
-        {% endfor %}
-    </ul>
-</div>
+{% include 'elements/user_game_panel.html' %}
 
 {% endblock %}
