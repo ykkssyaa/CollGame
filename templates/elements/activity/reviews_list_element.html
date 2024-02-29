@@ -1,0 +1,12 @@
+
+<div class="review">
+
+    <p class="review-user"><a href="{% url 'users:profile' username=user.username %}"> Профиль</a></p>
+    <p class="review_stars">{{ review.stars }}</p>
+    <p class="review_text">{{ review.description }}</p>
+    <p class="review_date">{{ review.created_at }}</p>
+
+    <!-- TODO: Проверить -->
+    <p class="review_likes">{{ review.likereview_set.all.count }}</p>
+
+</div>

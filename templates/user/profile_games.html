@@ -1,0 +1,15 @@
+{% extends 'user/profile_base.html' %}
+{% block user_content %}
+
+    <div class="user_games">
+        <h2>Игры пользователя</h2>
+        <ul>
+            {% for game in user_p.games.all %}
+
+                <li> {% include 'elements/games/games_list_element.html' %} </li>
+
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

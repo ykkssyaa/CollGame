@@ -5,7 +5,7 @@
 
 <ul>
     {% for game in games %}
-    <li> <a href="/games/{{ game.slug }}">{{ game.name }}</a> </li>
+    <li> {% include 'elements/games/games_list_element.html' %} </li>
     {% endfor %}
 </ul>
 

@@ -2,10 +2,11 @@ from django.contrib.auth import logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 
 from users.forms import RegisterUserForm
+from users.models import User
 
 
 class LoginUser(LoginView):
@@ -35,3 +36,22 @@ def register(request):
 
 def terms(request):
     return render(request, 'terms.html')
+
+
+def profile(request, username):
+
+    user = get_object_or_404(User, username=username)
+
+    return render(request, 'user/profile_info.html', {'user_p': user})
+
+
+def user_reviews(request, username):
+    user = get_object_or_404(User, username=username)
+
+    return render(request, 'user/profile_reviews.html', {'user_p': user})
+
+
+def user_collection(request, username):
+    user = get_object_or_404(User, username=username)
+
+    return render(request, 'user/profile_games.html', {'user_p': user})

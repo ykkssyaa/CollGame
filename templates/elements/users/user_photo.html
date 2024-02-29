@@ -1,0 +1,11 @@
+{% load static %}
+<div>
+    {% if user_of_photo.photo %}
+    <img src="{{ user_of_photo.photo.url }}" style="width: 50px;" alt="avatar"/>
+
+    {% else %}
+
+    <img src="{% static 'img/avatar-default.jpg' %}" style="width: 50px;" alt="avatar">
+
+    {% endif %}
+</div>

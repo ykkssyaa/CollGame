@@ -1,0 +1,17 @@
+{% extends 'user/profile_base.html' %}
+{% block user_content %}
+
+    <div class="user_reviews">
+
+        <h2>Рецензии пользователя</h2>
+        <ul>
+            {% for review in user_p.review_set.all %}
+
+                <li> {% include 'elements/activity/reviews_list_element.html' %} </li>
+
+            {% endfor %}
+        </ul>
+
+    </div>
+
+{% endblock %}
