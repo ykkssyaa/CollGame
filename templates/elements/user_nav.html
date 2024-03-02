@@ -7,7 +7,7 @@
     {% else %}
         <p id="username"> {{ user.username }} </p>
 
-        <a href="{% url 'users:profile' username=user.username %}"> Профиль</a>
+        <a href="{{ user.get_absolute_url }}"> Профиль</a>
         <a href="{% url 'users:logout' %}"> Logout</a>
 
         {% include 'elements/users/user_photo.html' with user_of_photo=user %}

@@ -1,17 +1,22 @@
 {% extends 'user/profile_base.html' %}
+{% load static %}
 {% block user_content %}
 
-    <div class="user_reviews">
+    <div class="review_list">
 
         <h2>Рецензии пользователя</h2>
         <ul>
             {% for review in user_p.review_set.all %}
 
-                <li> {% include 'elements/activity/reviews_list_element.html' %} </li>
+                <li> <h4><a href="{{ review.game.get_absolute_url }}" >{{ review.game.name }}</a></h4>
+                    {% include 'elements/activity/reviews_list_element.html' %}
+                </li>
 
             {% endfor %}
         </ul>
 
     </div>
+
+    <script src="{% static 'js/like_review.js' %}"></script>
 
 {% endblock %}

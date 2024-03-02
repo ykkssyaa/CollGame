@@ -28,10 +28,10 @@ def register(request):
             user.set_password(form.cleaned_data['password'])
             user.save()
 
-            return render(request, 'user/register_success.html',)
+            return render(request, 'user/register_success.html', {'title': 'Успешная регистрация'})
 
     form = RegisterUserForm()
-    return render(request, 'user/register.html', {'form': form})
+    return render(request, 'user/register.html', {'form': form, 'title': 'Регистрация'})
 
 
 def terms(request):
@@ -41,17 +41,22 @@ def terms(request):
 def profile(request, username):
 
     user = get_object_or_404(User, username=username)
+    context = {'user_p': user, 'title': f'Профиль пользователя {user.username}'}
 
-    return render(request, 'user/profile_info.html', {'user_p': user})
+    return render(request, 'user/profile_info.html', context)
 
 
 def user_reviews(request, username):
     user = get_object_or_404(User, username=username)
 
-    return render(request, 'user/profile_reviews.html', {'user_p': user})
+    context = {'user_p': user, 'title': f'Рецензии пользователя {user.username}'}
+
+    return render(request, 'user/profile_reviews.html', context)
 
 
 def user_collection(request, username):
     user = get_object_or_404(User, username=username)
 
-    return render(request, 'user/profile_games.html', {'user_p': user})
+    context = {'user_p': user, 'title': f'Коллекция пользователя {user.username}'}
+
+    return render(request, 'user/profile_games.html', context)

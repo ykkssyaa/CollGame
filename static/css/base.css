@@ -1,3 +1,14 @@
 h1 {
-    font: italic 1.2rem "Fira Sans", serif;
+    font: italic bold 2.2rem "Fira Sans", serif;
 }
+
+.button_liked {
+    background-color: green; /* Измените цвет фона на ваш выбор */
+    color: white; /* Измените цвет текста на ваш выбор */
+}
+
+.button_not_liked {
+    background-color: whitesmoke; /* Измените цвет фона на ваш выбор */
+    color: black; /* Измените цвет текста на ваш выбор */
+}
+

@@ -1,9 +1,11 @@
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotFound
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic.list import ListView
 
 from games.models import Game
-from users.models import User
+from games.utils import DataMixin
 
 
 def page_not_found(request, exception):
@@ -18,29 +20,42 @@ def terms_view(request):
     return render(request, 'terms.html', {'title': 'Пользовательское соглашение'})
 
 
-def find_games(request):
+class FindGames(ListView):
+    model = Game
+    template_name = 'games/find-result.html'
+    context_object_name = 'games'
 
-    game_name = request.GET.get('name', '')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
-    if game_name != '':
-        games = Game.objects.filter(name__icontains=game_name)
-        title = f'Поиск по играм - {game_name}'
-    else:
-        games = Game.objects.all()
-        title = f'Поиск по играм'
+        game_name = self.request.GET.get('name', '')
 
-    data = {'game_name': game_name, 'games': games, 'title': title}
-    return render(request, 'games/find-result.html', data)
+        if game_name != '':
+            context['title'] = f'Поиск по играм - {game_name}'
+        else:
+            context['title'] = 'Поиск по играм'
+
+        return context
+
+    def get_queryset(self):
+        return Game.objects.filter(Q(name__icontains=self.request.GET.get('name', '')) & Q(is_published=True))
 
 
 def game_page(request, game_slug):
 
-    game = Game.objects.get(slug=game_slug)
+    game = get_object_or_404(Game, slug=game_slug, is_published=True)
 
     releases = game.release_set.all()
+    reviews = game.review_set.all()
+
+    review_likes = []
+    for review in reviews:
+        liked = request.user.likereview_set.filter(review=review).exists()
+        review_likes.append([review, liked])
+
     links = game.gameslinks_set.all()
 
-    data = {'game': game, 'title': game.name, 'releases': releases, 'links': links}
+    data = {'game': game, 'title': game.name, 'releases': releases, 'links': links, 'reviews': review_likes}
     return render(request, 'games/game-page.html', data)
 
 

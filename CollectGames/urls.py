@@ -14,7 +14,7 @@ urlpatterns = [
     path('games/', include('games.urls')),
     path('terms/', terms, name='terms'),
     path('users/', include(('users.urls', 'users'))),
-    path('activity', include(('activity.urls', 'activity'))),
+    path('activity/', include(('activity.urls', 'activity'))),
     path("favicon.ico", RedirectView.as_view(url=staticfiles_storage.url("img/gamepad.ico")), name="favicon")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

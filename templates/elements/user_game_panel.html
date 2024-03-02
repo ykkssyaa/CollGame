@@ -18,5 +18,12 @@
 
             {% endif %}
         </div>
+
+        <div class="review_button">
+            <form method="GET" action="{% url 'activity:addReview' game_slug=game.slug %}">
+                <button type="submit">Написать рецензию</button>
+            </form>
+        </div>
     </div>
+
 {% endif %}

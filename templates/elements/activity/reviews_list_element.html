@@ -1,12 +1,21 @@
 
 <div class="review">
 
-    <p class="review-user"><a href="{% url 'users:profile' username=user.username %}"> Профиль</a></p>
-    <p class="review_stars">{{ review.stars }}</p>
-    <p class="review_text">{{ review.description }}</p>
-    <p class="review_date">{{ review.created_at }}</p>
+    <p class="review-user"><a href="{{ review.user.get_absolute_url }}"> {{ review.user.username }}</a></p>
+    <p class="review_stars">Оценка: {{ review.stars }}</p>
+    <p class="review_text">Описание: {{ review.description }}</p>
+    <p class="review_date">Написана {{ review.created}}</p>
 
-    <!-- TODO: Проверить -->
-    <p class="review_likes">{{ review.likereview_set.all.count }}</p>
+    <p class="review_likes">Лайки: <span id="review_likes_{{ review.id }}">{{ review.likereview_set.all.count }}</span></p>
+
+    {% if review.user.pk != user.pk %}
+        {% if like %}
+
+        <button class="like-button button_liked" data-review-id="{{ review.id }}">Liked</button>
+        {% else %}
+
+            <button class="like-button button_not_liked" data-review-id="{{ review.id }}">Like</button>
+        {% endif %}
+    {% endif %}
 
 </div>

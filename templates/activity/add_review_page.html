@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block  content %}
+
+    <a href="{% url 'game_page' game_slug=game.slug %}">К игре</a>
+    <h1>{{ game.name }}</h1>
+    <h2>Написание рецензии</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+
+        <button type="submit">Сохранить</button>
+
+        {% if form.instance.pk %}
+            <button type="submit" name="delete" value="1">Удалить</button>
+        {% endif %}
+    </form>
+
+
+{% endblock%}

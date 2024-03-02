@@ -28,7 +28,7 @@ class Game(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return f'/games/{self.slug}/'
+        return f'/games/{self.slug}'
 
 
 class GameStudio(models.Model):
