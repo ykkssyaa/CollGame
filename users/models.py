@@ -1,6 +1,7 @@
 import os
 
 from django.contrib.auth.models import AbstractUser, User
+from django.core.exceptions import ValidationError
 from django.db import models
 
 
@@ -29,3 +30,11 @@ class UserList(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created = models.DateField(auto_now_add=True)
     games = models.ManyToManyField('games.Game', related_name='games_in_list', blank=True)
+
+    def clean(self):
+        if self.user:
+            existing_lists = UserList.objects.filter(name=self.name, user=self.user)
+            if self.pk:
+                existing_lists = existing_lists.exclude(pk=self.pk)
+            if existing_lists.exists():
+                raise ValidationError('Список с таким именем уже существует для этого пользователя.')

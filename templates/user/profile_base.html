@@ -6,9 +6,9 @@
     {% include 'elements/users/user_photo.html' with user_of_photo=user_p %}
 
     <nav class="profile_nav">
-        <a href="{% url 'users:profile' username=user.username %}"> Профиль </a>
-        <a href="{% url 'users:profile_collection' username=user.username %}"> Коллекция</a>
-        <a href="{% url 'users:profile_reviews' username=user.username %}"> Рецензии</a>
+        <a href="{% url 'users:profile' username=user_p.username %}"> Профиль </a>
+        <a href="{% url 'users:profile_collection' username=user_p.username %}"> Коллекция</a>
+        <a href="{% url 'users:profile_reviews' username=user_p.username %}"> Рецензии</a>
     </nav>
 
     {% block user_content %}

@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django import forms
 from django.contrib.auth import get_user_model
-from .models import User
+from .models import User, UserList
 
 
 class LoginUserForm(AuthenticationForm):
@@ -50,3 +50,11 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ['photo']
 
+
+class UserListForm(forms.ModelForm):
+    class Meta:
+        model = UserList
+        fields = ['name']
+        labels = {
+            'name': 'Название'
+        }

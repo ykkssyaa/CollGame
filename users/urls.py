@@ -7,6 +7,7 @@ import users.views as views
 from . import views
 
 urlpatterns = [
+    path('addlist', views.add_list, name='add_list'),
     path('login', views.LoginUser.as_view(), name='login'),
     path('logout', views.logout_user, name='logout'),
     path('register', views.register, name='register'),

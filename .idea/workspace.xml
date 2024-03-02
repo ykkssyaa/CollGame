@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="reviews, likes to review">
+    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="Games in UserList">
+      <change afterPath="$PROJECT_DIR$/static/js/add_list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/error_handle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/profile_games.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_games.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/profile_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/profile_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
@@ -52,7 +57,7 @@
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.CollGame.executor": "Debug",
+    "Django Server.CollGame.executor": "Run",
     "Docker.docker-compose.yml.postgres: Compose Deployment.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -173,7 +178,7 @@
       <workItem from="1709121913483" duration="11939000" />
       <workItem from="1709202801214" duration="13556000" />
       <workItem from="1709307041346" duration="12178000" />
-      <workItem from="1709384779904" duration="6328000" />
+      <workItem from="1709384779904" duration="11267000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -327,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709386306562</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Games in UserList">
+      <option name="closed" value="true" />
+      <created>1709391146147</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1709391146147</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,6 +377,7 @@
     <MESSAGE value="templates, user profile alpha" />
     <MESSAGE value="updates in user profile, start work with reviews" />
     <MESSAGE value="reviews, likes to review" />
-    <option name="LAST_COMMIT_MESSAGE" value="reviews, likes to review" />
+    <MESSAGE value="Games in UserList" />
+    <option name="LAST_COMMIT_MESSAGE" value="Games in UserList" />
   </component>
 </project>

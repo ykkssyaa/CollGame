@@ -1,14 +1,17 @@
+import datetime
+
 from django.contrib.auth import logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponseRedirect, Http404
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView
 
+from activity.views import get_current_date
 from games.models import Game
 from games.utils import DataMixin
-from users.forms import RegisterUserForm
+from users.forms import RegisterUserForm, UserListForm
 from users.models import User, UserList
 from typing import Optional
 
@@ -43,9 +46,8 @@ def terms(request):
 
 
 def profile(request, username):
-
     user = get_object_or_404(User, username=username)
-    context = {'user_p': user, 'title': f'Профиль пользователя {user.username}'}
+    context = {'user_p': user, 'title': f'Профиль пользователя {user.username}', 'add_list_form': UserListForm()}
 
     return render(request, 'user/profile_info.html', context)
 
@@ -92,3 +94,20 @@ class UserCollection(ListView):
         else:
             return self.user.games.all()
 
+
+def add_list(request):
+    error_message = None
+    if request.method == 'POST':
+        form = UserListForm(request.POST)
+        form.instance.user = request.user
+        if form.is_valid():
+            list_instance = form.save(commit=False)
+
+            list_instance.created = get_current_date()
+            list_instance.save()
+
+        else:
+            error_message = 'Такой список уже существует'
+
+    return redirect(reverse_lazy('users:profile', kwargs={'username': request.user.username}) +
+                    f'?error={error_message}' if error_message else '')
