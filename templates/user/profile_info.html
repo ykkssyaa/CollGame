@@ -8,23 +8,12 @@
         <h2>Списки пользователя</h2>
         <ul>
             {% for list in user_p.userlist_set.all %}
-            <li><a href="{% url 'users:profile_collection' username=user_p.username %}?list={{ list.id}}">{{ list.name }}</a></li>
+            <li>{% include 'elements/users/userlist_element.html' %}</li>
             {% endfor %}
         </ul>
 
-        {% if request.user.pk == user_p.pk %}
+        {% include 'elements/users/add_new_list_form.html' %}
 
-            <button id="createListBtn">Создать новый список</button>
-            <script src="{% static 'js/add_list.js' %}"></script>
-            <div id="createListForm" style="display: none;">
-                <form id="listForm" method="post" action="{% url 'users:add_list' %}">
-                    {% csrf_token %}
-                    {{ add_list_form.as_p }}
-                    <button type="submit">Создать</button>
-                </form>
-            </div>
-
-        {% endif %}
     </div>
 
 

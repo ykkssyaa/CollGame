@@ -1,0 +1,80 @@
+
+<div class="add_to_list_button">
+    <button id="addToListButton">Добавить в список</button>
+    <div id="userLists" style="display: none;">
+        {% for userlist in user.userlist_set.all %}
+            <button class="userListButton" data-listid="{{ userlist.id }}">{{ userlist.name }}</button>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var gameId = "{{ game.id }}";
+
+        document.getElementById('addToListButton').addEventListener('click', function() {
+            var userLists = document.getElementById('userLists');
+            if (userLists.style.display === 'none') {
+                userLists.style.display = 'block';
+                checkListsForGame();
+            } else {
+                userLists.style.display = 'none';
+            }
+        });
+
+        var listButtons = document.querySelectorAll('.userListButton');
+        listButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var listId = this.getAttribute('data-listid');
+                var gameId = "{{ game.id }}";
+                addToUserList(listId, gameId);
+            });
+        });
+
+        function addToUserList(listId, gameId) {
+            fetch('{% url 'users:add_to_list' %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify({
+                    list_id: listId,
+                    game_id: gameId
+                })
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                if (data.status === 'success') {
+                    console.log(data.message);
+                    if (data.action === 'added') {
+                        // Добавляем класс, если игра добавлена в список
+                        document.querySelector('.userListButton[data-listid="' + listId + '"]').classList.add('gameInList');
+                    } else if (data.action === 'deleted') {
+                        // Удаляем класс, если игра удалена из списка
+                        document.querySelector('.userListButton[data-listid="' + listId + '"]').classList.remove('gameInList');
+                    }
+                } else {
+                    console.error(data.message);
+                }
+            }).catch(function(error) {
+                console.error('Ошибка при отправке запроса:', error);
+            });
+        }
+
+        function checkListsForGame() {
+            fetch('{% url 'users:lists_with_game' %}?game_id=' + gameId)
+                .then(response => response.json())
+                .then(data => {
+                    var listButtons = document.querySelectorAll('.userListButton');
+                    listButtons.forEach(function (button) {
+                        var listId = button.getAttribute('data-listid');
+                        if (data.some(list => list.id == listId)) {
+                            button.classList.add('gameInList');
+                        }
+                    });
+                })
+                .catch(error => console.error('Ошибка при получении списков:', error));
+        }
+    });
+</script>

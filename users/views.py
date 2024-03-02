@@ -1,9 +1,10 @@
 import datetime
+import json
 
 from django.contrib.auth import logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
-from django.http import HttpResponseRedirect, Http404
+from django.http import HttpResponseRedirect, Http404, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView
@@ -95,6 +96,10 @@ class UserCollection(ListView):
             return self.user.games.all()
 
 
+def reverse_lazy_lazy(username):
+    return reverse_lazy('users:profile', kwargs={'username': username})
+
+
 def add_list(request):
     error_message = None
     if request.method == 'POST':
@@ -109,5 +114,61 @@ def add_list(request):
         else:
             error_message = 'Такой список уже существует'
 
-    return redirect(reverse_lazy('users:profile', kwargs={'username': request.user.username}) +
-                    f'?error={error_message}' if error_message else '')
+    return redirect(reverse_lazy_lazy(request.user.username) +
+                    (f'?error={error_message}'if error_message else ''))
+
+
+def delete_list(request):
+    if request.method == 'POST':
+        list_id = request.POST.get('list_id')
+        try:
+            list_to_delete = UserList.objects.get(id=list_id)
+            list_to_delete.delete()
+
+        except UserList.DoesNotExist:
+            return redirect(reverse_lazy_lazy(request.user.username) + '?error=Ошибка удаления списка')
+
+    return redirect(reverse_lazy_lazy(request.user.username))
+
+
+def add_game_to_list(request):
+    if request.method == 'POST':
+        # Читаем данные из тела запроса JSON
+        data = json.loads(request.body.decode('utf-8'))
+
+        # Получаем идентификатор списка и игры из данных запроса
+        list_id = data.get('list_id')
+        game_id = data.get('game_id')
+
+        # Получаем объекты списка пользователя и игры
+        user_list = get_object_or_404(UserList, pk=list_id)
+        game = get_object_or_404(Game, pk=game_id)
+
+        # Проверяем, не добавлена ли игра уже в список пользователя
+        if game in user_list.games.all():
+            # Если игра уже в списке, удаляем ее из списка
+            user_list.games.remove(game)
+            return JsonResponse({'status': 'success', 'message': 'Игра успешно удалена из списка', 'action': 'deleted'}, status=200)
+        else:
+            # Если игра не в списке, добавляем ее в список
+            user_list.games.add(game)
+            return JsonResponse({'status': 'success', 'message': 'Игра успешно добавлена в список', 'action': 'added'}, status=200)
+
+    return JsonResponse({'status': 'error', 'message': 'Недопустимый запрос'}, status=400)
+
+
+def lists_with_game(request):
+    if request.method == 'GET' and 'game_id' in request.GET:
+        game_id = request.GET.get('game_id')
+
+        try:
+            game = Game.objects.get(pk=game_id)
+        except Game.DoesNotExist:
+            return JsonResponse({'error': 'Игра с указанным ID не найдена'}, status=404)
+
+        list_with_game = UserList.objects.filter(games=game)
+        lists_data = [{'id': user_list.id, 'name': user_list.name} for user_list in list_with_game]
+
+        return JsonResponse(lists_data, safe=False)
+
+    return JsonResponse({'error': 'Недопустимый запрос'}, status=400)

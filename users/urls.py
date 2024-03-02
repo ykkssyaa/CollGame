@@ -8,6 +8,9 @@ from . import views
 
 urlpatterns = [
     path('addlist', views.add_list, name='add_list'),
+    path('deletelist', views.delete_list, name='delete_list'),
+    path('add-to-list', views.add_game_to_list, name='add_to_list'),
+    path('lists-with-game/', views.lists_with_game, name='lists_with_game'),
     path('login', views.LoginUser.as_view(), name='login'),
     path('logout', views.logout_user, name='logout'),
     path('register', views.register, name='register'),

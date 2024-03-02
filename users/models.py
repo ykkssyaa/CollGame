@@ -31,6 +31,9 @@ class UserList(models.Model):
     created = models.DateField(auto_now_add=True)
     games = models.ManyToManyField('games.Game', related_name='games_in_list', blank=True)
 
+    def __str__(self):
+        return self.name
+
     def clean(self):
         if self.user:
             existing_lists = UserList.objects.filter(name=self.name, user=self.user)
