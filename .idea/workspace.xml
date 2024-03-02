@@ -4,25 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="updates in user profile, start work with reviews">
-      <change afterPath="$PROJECT_DIR$/games/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/like_review.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/activity/add_review_page.html" afterDir="false" />
+    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="reviews, likes to review">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectGames/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectGames/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/activity/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/activity/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/activity/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/activity/reviews_list_element.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/activity/reviews_list_element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/user_game_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/user_game_panel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/user_nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/user_nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/games/game-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/games/game-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/profile_reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_reviews.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/profile_games.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_games.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/profile_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,35 +48,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.CollGame.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.postgres: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IT/CollGame/templates/user&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;settings.editor.splitter.proportion&quot;: &quot;0.25280327&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.CollGame.executor": "Debug",
+    "Docker.docker-compose.yml.postgres: Compose Deployment.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/IT/CollGame/templates/user",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.splitter.proportion": "0.25280327",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;,
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite",
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\IT\CollGame\templates\user" />
@@ -187,7 +173,7 @@
       <workItem from="1709121913483" duration="11939000" />
       <workItem from="1709202801214" duration="13556000" />
       <workItem from="1709307041346" duration="12178000" />
-      <workItem from="1709384779904" duration="1257000" />
+      <workItem from="1709384779904" duration="6328000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -333,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709212156082</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="reviews, likes to review">
+      <option name="closed" value="true" />
+      <created>1709386306562</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1709386306562</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -369,6 +363,7 @@
     <MESSAGE value="registration and login" />
     <MESSAGE value="templates, user profile alpha" />
     <MESSAGE value="updates in user profile, start work with reviews" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates in user profile, start work with reviews" />
+    <MESSAGE value="reviews, likes to review" />
+    <option name="LAST_COMMIT_MESSAGE" value="reviews, likes to review" />
   </component>
 </project>
