@@ -119,6 +119,13 @@ class UpdateUserPage(UpdateView):
     model = User
     fields = ['photo', 'first_name', 'last_name', 'email', 'steam_id']
     template_name = 'user/profile_update.html'
+    extra_context = {'title': 'Изменение профиля'}
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def get_success_url(self):
+        return reverse_lazy('users:profile', kwargs={'username': self.request.user.username})
 
 
 #  ----------------------------------------------------------------
