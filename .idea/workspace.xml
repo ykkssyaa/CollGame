@@ -4,10 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="deleting games from lists, collection">
-      <change afterPath="$PROJECT_DIR$/templates/user/profile_update.html" afterDir="false" />
+    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="edit profile page">
+      <change afterPath="$PROJECT_DIR$/templates/activity/add_new_dictionary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/activity/dictionary_activity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/elements/activity/activity_element.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/elements/activity/dictionary_element.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CollGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CollGame.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/profile_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/activity/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/activity/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/activity/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/activity/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/games/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/games/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/profile_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/profile_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
@@ -25,8 +39,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -52,7 +66,7 @@
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.CollGame.executor": "Debug",
+    "Django Server.CollGame.executor": "Run",
     "Docker.docker-compose.yml.postgres: Compose Deployment.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -86,6 +100,8 @@
       <recent name="E:\IT\CollGame" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IT\CollGame\templates\activity" />
+      <recent name="E:\IT\CollGame\templates\elements\activity" />
       <recent name="E:\IT\CollGame" />
       <recent name="E:\IT\CollGame\CollectGames" />
       <recent name="E:\IT\CollGame\games\templates\games" />
@@ -174,7 +190,7 @@
       <workItem from="1709202801214" duration="13556000" />
       <workItem from="1709307041346" duration="12178000" />
       <workItem from="1709384779904" duration="17310000" />
-      <workItem from="1709456493801" duration="9126000" />
+      <workItem from="1709456493801" duration="20302000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -360,7 +376,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709466304068</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="edit profile page">
+      <option name="closed" value="true" />
+      <created>1709467156760</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1709467156760</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,17 +425,7 @@
     <MESSAGE value="UserLists in user profile, adding lists" />
     <MESSAGE value="adding game to UserList" />
     <MESSAGE value="deleting games from lists, collection" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleting games from lists, collection" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/users/views.py</url>
-          <line>124</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="edit profile page" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit profile page" />
   </component>
 </project>

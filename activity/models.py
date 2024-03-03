@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse_lazy
 
 
 class GameDictionary(models.Model):
@@ -8,7 +9,13 @@ class GameDictionary(models.Model):
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
     description = models.TextField(blank=True)
-    # TODO: добавить статус
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse_lazy('activity:dictionary_page', kwargs={'id': self.id})
 
 
 class Activity(models.Model):

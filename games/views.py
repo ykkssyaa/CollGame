@@ -50,9 +50,13 @@ def game_page(request, game_slug):
     reviews = game.review_set.all()
 
     review_likes = []
-    for review in reviews:
-        liked = request.user.likereview_set.filter(review=review).exists()
-        review_likes.append([review, liked])
+    if request.user.is_authenticated:
+        for review in reviews:
+            liked = request.user.likereview_set.filter(review=review).exists()
+            review_likes.append([review, liked])
+    else:
+        for review in reviews:
+            review_likes.append([review, False])
 
     links = game.gameslinks_set.all()
 

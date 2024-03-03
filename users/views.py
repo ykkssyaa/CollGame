@@ -4,16 +4,17 @@ import json
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponseRedirect, Http404, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, UpdateView
+from django.views.generic import ListView, UpdateView, RedirectView
 
 from activity.views import get_current_date
 from games.models import Game
 from games.utils import DataMixin
-from users.forms import RegisterUserForm, UserListForm
+from users.forms import RegisterUserForm, UserListForm, UserUpdateForm
 from users.models import User, UserList
 from typing import Optional
 
@@ -67,7 +68,15 @@ def terms(request):
 
 def profile(request, username):
     user = get_object_or_404(User, username=username)
-    context = {'user_p': user, 'title': f'Профиль пользователя {user.username}', 'add_list_form': UserListForm()}
+    if user == request.user:
+        dictionaries = user.gamedictionary_set.all()
+    else:
+        dictionaries = user.gamedictionary_set.filter(is_active=True)
+
+    context = {'user_p': user,
+               'title': f'Профиль пользователя {user.username}',
+               'add_list_form': UserListForm(),
+               'dicts': dictionaries}
 
     return render(request, 'user/profile_info.html', context)
 
@@ -117,7 +126,7 @@ class UserCollection(ListView):
 
 class UpdateUserPage(UpdateView):
     model = User
-    fields = ['photo', 'first_name', 'last_name', 'email', 'steam_id']
+    form_class = UserUpdateForm
     template_name = 'user/profile_update.html'
     extra_context = {'title': 'Изменение профиля'}
 
@@ -127,6 +136,16 @@ class UpdateUserPage(UpdateView):
     def get_success_url(self):
         return reverse_lazy('users:profile', kwargs={'username': self.request.user.username})
 
+
+class DeleteAccountView(LoginRequiredMixin, RedirectView):
+    url = reverse_lazy('index')
+
+    def get_redirect_url(self, *args, **kwargs):
+        # Удаление аккаунта пользователя
+        self.request.user.delete()
+        # Выход пользователя из системы после удаления аккаунта
+        logout(self.request)
+        return super().get_redirect_url(*args, **kwargs)
 
 #  ----------------------------------------------------------------
 #  Работа со списками

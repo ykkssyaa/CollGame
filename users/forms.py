@@ -58,3 +58,15 @@ class UserListForm(forms.ModelForm):
         labels = {
             'name': 'Название'
         }
+
+
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['photo', 'first_name', 'last_name', 'bio', 'email', 'steam_id']
+
+    def __init__(self, *args, **kwargs):
+        super(UserUpdateForm, self).__init__(*args, **kwargs)
+        self.fields['photo'].required = False
+        self.fields['steam_id'].required = False
+        self.fields['bio'].required = False

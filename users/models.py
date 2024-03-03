@@ -17,6 +17,7 @@ class User(AbstractUser):
     steam_id = models.CharField(max_length=255)
     created = models.DateField(auto_now_add=True)
     games = models.ManyToManyField('games.Game', related_name='games_in_collection', blank=True)
+    bio = models.TextField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return self.username

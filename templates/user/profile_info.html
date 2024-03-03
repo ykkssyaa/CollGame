@@ -16,11 +16,17 @@
 
     </div>
 
-
-
     <div class="user_activity">
         <h2>Последняя активность пользователя</h2>
+        <ul>
+            {% for dict in dicts %}
+            <li>{% include 'elements/activity/dictionary_element.html' %}</li>
+            {% endfor %}
+        </ul>
 
+    {% if user_p.pk == request.user.pk %}
+         <a href="{% url 'activity:add_game_dictionary' %}">Добавить новый дневник прохождения</a>
+    {% endif %}
     </div>
 
 {% endblock %}

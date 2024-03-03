@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <a href="{{ dictionary.user.get_absolute_url }}">Назад к профилю</a>
+
+    <h2>Дневник прохождения {{ dictionary.name }}</h2>
+    <h3>Игра {{ dictionary.game.name }}</h3>
+{#    <h3>Общее количество часов: {{ total_hours }}</h3>#}
+    <div class="description">
+        {{ dictionary.description }}
+    </div>
+
+
+    {% if dictionary.user.pk == request.user.pk %}
+        <a href="{{ dictionary.get_absolute_url }}/update">Изменить информацию о дневнике прохождения</a>
+        <h3>Добавить новую запись</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Добавить</button>
+        </form>
+    {% endif %}
+
+    <h2>Список записей</h2>
+    <ul>
+        {% for activity in object_list %}
+            <li>{% include 'elements/activity/activity_element.html' %}</li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}

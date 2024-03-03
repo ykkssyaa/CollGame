@@ -1,0 +1,16 @@
+<div class="activity_element">
+    <p class="hours"> Часы в игре: {{ activity.hours }}</p>
+
+    <div class="activity_description">
+        {{ activity.description }}
+    </div>
+
+    {% if dictionary.user.pk == request.user.pk %}
+        <form method="post" action="{% url 'activity:delete_activity' %}">
+            {% csrf_token %}
+            <input type="hidden" name="id" value="{{ activity.id }}">
+            <input type="hidden" name="delete" value="1">
+            <button type="submit">Удалить</button>
+        </form>
+    {% endif %}
+</div>
