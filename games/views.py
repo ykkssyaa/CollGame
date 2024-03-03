@@ -6,6 +6,7 @@ from django.views.generic.list import ListView
 
 from games.models import Game
 from games.utils import DataMixin
+from users.models import UserList
 
 
 def page_not_found(request, exception):
@@ -75,5 +76,8 @@ def delete_game(request, game_slug):
         if request.user.is_authenticated:
             game = Game.objects.get(slug=game_slug)
             request.user.games.remove(game)
+
+            for userList in request.user.userlist_set.all():  # Удаляем игры из списков пользователя
+                userList.games.remove(game)
 
     return redirect('game_page', game_slug=game_slug)

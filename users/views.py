@@ -2,12 +2,13 @@ import datetime
 import json
 
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponseRedirect, Http404, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView
+from django.views.generic import ListView, UpdateView
 
 from activity.views import get_current_date
 from games.models import Game
@@ -28,6 +29,22 @@ def logout_user(request):
     return HttpResponseRedirect(reverse_lazy('index'))
 
 
+DEFAULT_LIST_NAME = ['Список желаемого', 'Пройденные', 'Играю']
+
+
+def create_default_lists(user: User):
+
+    today = get_current_date()
+
+    for name in DEFAULT_LIST_NAME:
+        user_list = UserList()
+        user_list.name = name
+        user_list.user = user
+        user_list.created = today
+
+        user_list.save()
+
+
 def register(request):
     if request.method == 'POST':
         form = RegisterUserForm(request.POST, request.FILES)
@@ -35,6 +52,8 @@ def register(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
+
+            create_default_lists(user)
 
             return render(request, 'user/register_success.html', {'title': 'Успешная регистрация'})
 
@@ -96,10 +115,20 @@ class UserCollection(ListView):
             return self.user.games.all()
 
 
+class UpdateUserPage(UpdateView):
+    model = User
+    fields = ['photo', 'first_name', 'last_name', 'email', 'steam_id']
+    template_name = 'user/profile_update.html'
+
+
+#  ----------------------------------------------------------------
+#  Работа со списками
+
 def reverse_lazy_lazy(username):
     return reverse_lazy('users:profile', kwargs={'username': username})
 
 
+@login_required
 def add_list(request):
     error_message = None
     if request.method == 'POST':
@@ -118,6 +147,7 @@ def add_list(request):
                     (f'?error={error_message}'if error_message else ''))
 
 
+@login_required
 def delete_list(request):
     if request.method == 'POST':
         list_id = request.POST.get('list_id')
@@ -131,6 +161,7 @@ def delete_list(request):
     return redirect(reverse_lazy_lazy(request.user.username))
 
 
+@login_required
 def add_game_to_list(request):
     if request.method == 'POST':
         # Читаем данные из тела запроса JSON
@@ -150,11 +181,45 @@ def add_game_to_list(request):
             user_list.games.remove(game)
             return JsonResponse({'status': 'success', 'message': 'Игра успешно удалена из списка', 'action': 'deleted'}, status=200)
         else:
-            # Если игра не в списке, добавляем ее в список
+            if game not in request.user.games.all():  # Если игры нет в коллекции пользователя
+                request.user.games.add(game)
+
             user_list.games.add(game)
             return JsonResponse({'status': 'success', 'message': 'Игра успешно добавлена в список', 'action': 'added'}, status=200)
 
     return JsonResponse({'status': 'error', 'message': 'Недопустимый запрос'}, status=400)
+
+
+@login_required
+def delete_game_from_list(request):
+    if request.method == 'POST':
+        data = json.loads(request.body.decode('utf-8'))
+
+        game_id = data.get('game_id')
+        list_id = data.get('list_id')
+
+        game = get_object_or_404(Game, id=game_id)
+
+        if list_id:
+            user_list = get_object_or_404(UserList, id=list_id)
+
+            if user_list.user.pk != request.user.pk:
+                return JsonResponse({'success': False, 'error': 'Нет доступа к списку'})
+
+            if game in user_list.games.all():
+                user_list.games.remove(game_id)
+                return JsonResponse({'success': True})
+            else:
+                return JsonResponse({'success': False, 'error': 'Игра не найдена в списке пользователя'})
+        else:
+            if game in request.user.games.all():
+                request.user.games.remove(game)
+                return JsonResponse({'success': True})
+            else:
+                return JsonResponse({'success': False, 'error': 'Игра не найдена в коллекции пользователя'})
+
+    # Возвращаем ошибку метода запроса, если это не POST запрос
+    return JsonResponse({'success': False, 'error': 'Метод запроса должен быть POST'})
 
 
 def lists_with_game(request):

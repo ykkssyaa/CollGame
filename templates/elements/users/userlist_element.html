@@ -1,7 +1,9 @@
 <a href="{% url 'users:profile_collection' username=user_p.username %}?list={{ list.id }}">{{ list.name }}</a>
 
-<form action="{% url 'users:delete_list' %}" method="post">
-    {% csrf_token %}
-    <input type="hidden" name="list_id" value="{{ list.id }}">
-    <button type="submit">Удалить</button>
-</form>
+{% if user_p.pk == request.user.pk %}
+    <form action="{% url 'users:delete_list' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="list_id" value="{{ list.id }}">
+        <button type="submit">Удалить</button>
+    </form>
+{% endif %}

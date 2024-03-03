@@ -26,7 +26,6 @@
         listButtons.forEach(function(button) {
             button.addEventListener('click', function() {
                 var listId = this.getAttribute('data-listid');
-                var gameId = "{{ game.id }}";
                 addToUserList(listId, gameId);
             });
         });

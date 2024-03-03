@@ -1,15 +1,24 @@
 {% extends 'user/profile_base.html' %}
+{% load static %}
 {% block user_content %}
 
     <div class="user_games">
         <h2>{{ title }}</h2>
         <ul>
-            {% for game in user_p.games.all %}
+            {% for game in games %}
 
                 <li> {% include 'elements/games/games_list_element.html' %} </li>
+
+                {% if user_p.pk == request.user.pk %}
+                    <button class="delete-btn" data-game-id="{{ game.id }}" >Удалить</button>
+                {% endif %}
 
             {% endfor %}
         </ul>
     </div>
+
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    <script src="{% static 'js/delete_game_from_list.js' %}"></script>
+
 
 {% endblock %}
