@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h2> Добавление нового дневника прохождения </h2>
+<div class="container box_with_shadow">
+
+    <a href="{{ request.user.get_absolute_url }}" class="btn btn-primary mt-2 mb-2">К профилю</a>
+
+    <h2>{{ title }}</h2>
 
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Добавить</button>
+        <div class="mb-3">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">{{ button_name }}</button>
     </form>
+</div>
 
 {% endblock %}

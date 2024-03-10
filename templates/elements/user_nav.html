@@ -1,17 +1,42 @@
 {% load static %}
-<nav class="user_nav">
+<div class="row align-items-center m-2">
 
-    {% if not user.is_authenticated %}
-        <a href="{% url 'users:login' %}?next={{ request.path }}"> Войти</a>
-        <a href="{% url 'users:register' %}?next={{ request.path }}">Регистрация</a>
-    {% else %}
-        <p id="username"> {{ user.username }} </p>
+    <div class="col"> {{ user.username }} </div>
 
-        <a href="{{ user.get_absolute_url }}"> Профиль</a>
-        <a href="{% url 'users:logout' %}"> Logout</a>
+    <div class="col">
 
-        {% include 'elements/users/user_photo.html' with user_of_photo=user %}
+        {% if user.is_authenticated %}
 
+            <div class="dropdown user-nav">
+                <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false" type="button"
+                        style="background-color: rgba(0, 123, 255, 0.5);">
 
-    {% endif %}
-</nav>
+                    {% include 'elements/users/user_photo.html' with user_of_photo=user %}
+                </button>
+
+                <ul class="user-links dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{ user.get_absolute_url }}">Профиль</a></li>
+                    <li><a class="dropdown-item"
+                           href="{% url 'users:profile_collection' username=user.username %}">Коллекция</a></li>
+                    <li><a class="dropdown-item"
+                           href="{% url 'users:profile_reviews' username=user.username %}">Рецензии</a>
+                    </li>
+                    <li><a class="dropdown-item text-danger" href="{% url 'users:logout' %}">Выход</a></li>
+                </ul>
+            </div>
+
+        {% else %}
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex justify-content-between">
+                        <a class="btn btn-primary m-2" href="{% url 'users:login' %}?next={{ request.path }}"> Войти</a>
+                        <a class="btn btn-primary mt-2 mb-2 ml-2"
+                           href="{% url 'users:register' %}?next={{ request.path }}">Регистрация</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+

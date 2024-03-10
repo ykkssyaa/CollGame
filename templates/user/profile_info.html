@@ -2,31 +2,45 @@
 {% load static %}
 {% block user_content %}
 
-    <p class="created_at_info">Зарегистрирован: {{user_p.created}} </p>
+    <div class="container">
+        {% if user_p.bio %}
+            <div class="card">
+                <div class="card-body">
+                    {{ user_p.bio }}
+                </div>
+            </div>
+        {% endif %}
+        <p class="created_at_info">Зарегистрирован: {{ user_p.created }} </p>
 
-    <div class="user_lists">
-        <h2>Списки пользователя</h2>
-        <ul>
-            {% for list in user_p.userlist_set.all %}
-            <li>{% include 'elements/users/userlist_element.html' %}</li>
-            {% endfor %}
-        </ul>
+        <hr>
 
-        {% include 'elements/users/add_new_list_form.html' %}
+        <div class="user_lists  mt-4">
+            <h2>Списки пользователя</h2>
+            <ul class="list-group m-3">
+                {% for list in user_p.userlist_set.all %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center w-50">
+                        {% include 'elements/users/userlist_element.html' %}
+                    </li>
+                {% endfor %}
+            </ul>
 
-    </div>
+            {% include 'elements/users/add_new_list_form.html' %}
 
-    <div class="user_activity">
-        <h2>Последняя активность пользователя</h2>
-        <ul>
-            {% for dict in dicts %}
-            <li>{% include 'elements/activity/dictionary_element.html' %}</li>
-            {% endfor %}
-        </ul>
+        </div>
+        <hr>
 
-    {% if user_p.pk == request.user.pk %}
-         <a href="{% url 'activity:add_game_dictionary' %}">Добавить новый дневник прохождения</a>
-    {% endif %}
+        <div class="user_activity mt-4">
+            <h2>Последняя активность пользователя</h2>
+            <ul class="list-group m-3 fs-3">
+                {% for dict in dicts %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center w-50">{% include 'elements/activity/dictionary_element.html' %}</li>
+                {% endfor %}
+            </ul>
+
+            {% if user_p.pk == request.user.pk %}
+                <a href="{% url 'activity:add_game_dictionary' %}" class="btn btn-primary mt-3">Добавить новый дневник прохождения</a>
+            {% endif %}
+        </div>
     </div>
 
 {% endblock %}

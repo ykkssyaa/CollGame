@@ -1,15 +1,15 @@
 {% load static %}
 {% if request.user.pk == user_p.pk %}
     <!-- Форма добавления новых списков, отображается только на личном профиле-->
-    <button id="createListBtn">Создать новый список</button>
+    <button id="createListBtn" class="btn btn-primary mt-4 mb-2">Создать новый список</button>
 
     <script src="{% static 'js/add_list.js' %}"></script>
 
-    <div id="createListForm" style="display: none;">
+    <div id="createListForm" style="display: none; width: 50%">
         <form id="listForm" method="post" action="{% url 'users:add_list' %}">
             {% csrf_token %}
             {{ add_list_form.as_p }}
-            <button type="submit">Создать</button>
+            <button type="submit" class="btn btn-primary mb-3">Создать</button>
         </form>
     </div>
 

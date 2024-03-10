@@ -1,31 +1,27 @@
 {% if user.is_authenticated %}
-    <div class="user_panel">
+    <div class="box_with_shadow">
+        <h3 class="mb-3">Управление коллекцией</h3>
 
-        <div class="add_button">
+        <div class="add_button mb-3">
             {% if game not in user.games.all %}
-
                 <form method="POST" action="{% url 'add_game' game_slug=game.slug %}">
                     {% csrf_token %}
-                    <button type="submit">Добавить в коллекцию</button>
+                    <button type="submit" class="btn btn-primary w-100">Добавить в коллекцию</button>
                 </form>
-
             {% else %}
-
                 <form method="POST" action="{% url 'delete_game' game_slug=game.slug %}">
                     {% csrf_token %}
-                    <button type="submit">Удалить из коллекции</button>
+                    <button type="submit" class="btn btn-danger w-100">Удалить из коллекции</button>
                 </form>
-
             {% endif %}
         </div>
 
-        <div class="review_button">
+        <div class="review_button mb-3">
             <form method="GET" action="{% url 'activity:addReview' game_slug=game.slug %}">
-                <button type="submit">Написать рецензию</button>
+                <button type="submit" class="btn btn-primary w-100">Написать рецензию</button>
             </form>
         </div>
 
         {% include 'elements/users/add_game_to_list.html' %}
     </div>
-
 {% endif %}

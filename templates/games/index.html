@@ -1,30 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <h2>CollGame - трекер коллекции видеоигр!</h2>
-    <p>
-        Добро пожаловать на CollGame - ваш персональный трекер коллекции видеоигр!
-        Здесь вы можете удобно отслеживать игры, которые у вас есть, хотите приобрести или просто интересны.
-    </p>
-    <div class="hello_user">
-        {% if user.is_authenticated %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2 class="text-center mb-4">CollGame - трекер коллекции видеоигр!</h2>
+                <p class="lead">
+                    Добро пожаловать на CollGame - ваш персональный трекер коллекции видеоигр!
+                    Здесь вы можете удобно отслеживать игры, которые у вас есть, хотите приобрести или просто интересны.
+                </p>
+                <hr>
 
-            {% if user.first_name != '' %}
-                <p>Привет, {{ user.first_name }}!</p>
-            {% else %}
-                <p>Привет, {{ user.username }}!</p>
-            {% endif %}
-            <p>Ознакомьтесь с нашими функциями, начните составлять свою коллекцию прямо сейчас!</p>
 
-        {% else %}
-            <p>
-                Присоединяйтесь к CollGame, чтобы вести учет вашей коллекции видеоигр.
-                <a href="{% url 'users:login' %}">Войдите</a> или
-                <a href="{% url 'users:register' %}">зарегистрируйтесь</a> уже сейчас!
-            </p>
+                <div class="hello-user">
+                    {% if user.is_authenticated %}
+                        {% if user.first_name != '' %}
+                            <p class="text-center">Привет, <span class="user-name-hello">{{ user.first_name }} </span>!
+                            </p>
+                        {% else %}
+                            <p class="text-center">Привет, <span class="user-name-hello">{{ user.username }}</span>!</p>
+                        {% endif %}
 
-        {% endif %}
+                        <p class="text-center">
+                            Ознакомьтесь с нашими функциями, начните составлять свою коллекцию прямо сейчас!
+                            Для просмотра списка игр воспользуйтесь поиском
+                        </p>
 
+                    {% else %}
+
+                        <p class="text-center">Присоединяйтесь к CollGame, чтобы вести учет вашей коллекции видеоигр.</p>
+
+                        <div class="text-center">
+                            <a href="{% url 'users:login' %}?next={{ request.path }}"
+                               class="btn btn-primary">Войдите</a> или
+                            <a href="{% url 'users:register' %}?next={{ request.path }}" class="btn btn-secondary">Зарегистрируйтесь</a>
+                            уже сейчас!
+                        </div>
+
+                    {% endif %}
+                </div>
+
+                <hr>
+            </div>
+        </div>
     </div>
 
 {% endblock %}

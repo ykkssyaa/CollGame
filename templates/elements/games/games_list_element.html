@@ -1,2 +1,22 @@
+<div class="game card mb-3">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <a class="game-poster" href="/games/{{ game.slug }}">
+                <img src="{{ game.poster.url }}" alt="{{ game.name }}" class="card-img-top img-fluid">
+            </a>
+        </div>
+        <div class="col-md-8">
 
-<a href="/games/{{ game.slug }}">{{ game.name }}</a>
+            <div class="card-body d-flex flex-column">
+                <a class="game-name card-title mb-auto" href="/games/{{ game.slug }}"><h4>{{ game.name }}</h4></a>
+                <p class="game-description card-text">{{ game.description|truncatewords:50 }}</p>
+            </div>
+            <div class="mt-auto text-end m-2">
+                {% if user_p.pk == request.user.pk %}
+                    <button class="btn btn-danger delete-btn" data-game-id="{{ game.id }}">Удалить</button>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>

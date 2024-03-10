@@ -1,18 +1,51 @@
-h1 {
-    font: italic bold 2.2rem "Fira Sans", serif;
+body {
+    background: linear-gradient(to bottom right, #e3f0fc, #979ba1);
 }
 
-.button_liked {
-    background-color: green; /* Измените цвет фона на ваш выбор */
-    color: white; /* Измените цвет текста на ваш выбор */
+/* Главная страница */
+.hello-user {
+    margin-top: 50px;
+    font-size: 20px;
 }
 
-.button_not_liked {
-    background-color: whitesmoke; /* Измените цвет фона на ваш выбор */
-    color: black; /* Измените цвет текста на ваш выбор */
+.hello-user p {
+    margin-bottom: 10px;
 }
 
-.gameInList{
-    background-color: #3875d7;
+.user-name-hello {
+    font-weight: bold;
+    color: #272727;
 }
+
+input[type="text"], input[type="password"],
+input[type="email"], textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* Стилизация выпадающего списка */
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.collgame_icon{
+    filter: opacity(50%)
+}
+
+.user-header, .user-block, .game_info, .review_list, .box_with_shadow{
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
 

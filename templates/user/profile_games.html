@@ -4,21 +4,16 @@
 
     <div class="user_games">
         <h2>{{ title }}</h2>
-        <ul>
+        <ul class="list-group" style="background-color: rgba(0, 0, 0, 1%); border: none;">
             {% for game in games %}
-
-                <li> {% include 'elements/games/games_list_element.html' %} </li>
-
-                {% if user_p.pk == request.user.pk %}
-                    <button class="delete-btn" data-game-id="{{ game.id }}" >Удалить</button>
-                {% endif %}
-
+                <li class="list-group-item d-flex justify-content-between align-items-center" style="border: none;">
+                    {% include 'elements/games/games_list_element.html' %}
+                </li>
             {% endfor %}
         </ul>
     </div>
 
     <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
     <script src="{% static 'js/delete_game_from_list.js' %}"></script>
-
 
 {% endblock %}

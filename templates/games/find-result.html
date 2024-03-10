@@ -3,9 +3,9 @@
 
 <h1>Результат поиска:  {{ game_name }}</h1>
 
-<ul>
+<ul class="list-group-item rounded" style="background-color: rgba(0, 0, 0, 1%); border: none;">
     {% for game in games %}
-    <li> {% include 'elements/games/games_list_element.html' %} </li>
+        {% include 'elements/games/games_list_element.html' %}
     {% endfor %}
 </ul>
 

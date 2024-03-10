@@ -2,13 +2,15 @@
 
 {% block content %}
 
-    <h2>{{ title }}</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Сохранить изменения</button>
-    </form>
+    <div class="user-form">
+        <h2>{{ title }}</h2>
+        <form method="post" enctype="multipart/form-data" class="mt-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary mt-3">Сохранить изменения</button>
+        </form>
 
-     <a href="{% url 'users:delete_profile' %}" class="btn btn-danger">Удалить аккаунт</a>
+        <a href="{% url 'users:delete_profile' %}" class="btn btn-danger mt-3">Удалить аккаунт</a>
+    </div>
 
 {% endblock %}

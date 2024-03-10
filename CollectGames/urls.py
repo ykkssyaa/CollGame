@@ -15,7 +15,7 @@ urlpatterns = [
     path('terms/', terms, name='terms'),
     path('users/', include(('users.urls', 'users'))),
     path('activity/', include(('activity.urls', 'activity'))),
-    path("favicon.ico", RedirectView.as_view(url=staticfiles_storage.url("img/gamepad.ico")), name="favicon")
+    path("favicon.ico", RedirectView.as_view(url=staticfiles_storage.url("img/icons8-ps-controller-100.png")), name="favicon")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = page_not_found

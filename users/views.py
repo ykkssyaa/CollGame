@@ -58,6 +58,9 @@ def register(request):
 
             return render(request, 'user/register_success.html', {'title': 'Успешная регистрация'})
 
+    if request.user.is_authenticated:
+        return redirect(reverse_lazy_lazy(request.user.get_username()))
+
     form = RegisterUserForm()
     return render(request, 'user/register.html', {'form': form, 'title': 'Регистрация'})
 

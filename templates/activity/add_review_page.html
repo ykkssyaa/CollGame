@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
-{% block  content %}
+{% block content %}
 
-    <a href="{% url 'game_page' game_slug=game.slug %}">К игре</a>
+<div class="container">
+    <a href="{% url 'game_page' game_slug=game.slug %}" class="btn btn-secondary mb-3">К игре</a>
     <h1>{{ game.name }}</h1>
     <h2>Написание рецензии</h2>
 
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div class="mb-3">
+            {{ form.as_p }}
+        </div>
 
-
-        <button type="submit">Сохранить</button>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
 
         {% if form.instance.pk %}
-            <button type="submit" name="delete" value="1">Удалить</button>
+            <button type="submit" class="btn btn-danger" name="delete" value="1">Удалить</button>
         {% endif %}
     </form>
+</div>
 
-
-{% endblock%}
+{% endblock %}

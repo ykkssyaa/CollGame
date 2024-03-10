@@ -1,7 +1,12 @@
+from io import BytesIO
+
 from django.contrib.auth.forms import AuthenticationForm
 from django import forms
 from django.contrib.auth import get_user_model
+from django.core.files.base import ContentFile
+
 from .models import User, UserList
+from PIL import Image
 
 
 class LoginUserForm(AuthenticationForm):
@@ -20,14 +25,13 @@ class RegisterUserForm(forms.ModelForm):
 
     class Meta:
         model = get_user_model()
-        fields = ['username', 'password', 'confirm_password', 'email', 'first_name', 'last_name']
+        fields = ['username', 'password', 'confirm_password', 'email', 'first_name']
         labels = {
             'username': 'Логин',
             'password': '<PASSWORD>',
             'confirm_password': '<PASSWORD>',
             'email': 'Email',
             'first_name': 'Имя',
-            'last_name': 'Фамилия'
         }
 
     def clean_confirm_password(self):
@@ -70,3 +74,34 @@ class UserUpdateForm(forms.ModelForm):
         self.fields['photo'].required = False
         self.fields['steam_id'].required = False
         self.fields['bio'].required = False
+
+    def save(self, commit=True):
+        user = super(UserUpdateForm, self).save(commit=False)
+
+        # Если загружено изображение
+        if 'photo' in self.cleaned_data:
+            photo = self.cleaned_data['photo']
+            if photo:
+                # Открываем изображение с помощью PIL
+                img = Image.open(photo)
+
+                # Определяем размеры центральной части изображения
+                width, height = img.size
+                min_dim = min(width, height)
+                left = int((width - min_dim) / 2)
+                top = int((height - min_dim) / 2)
+                right = int((width + min_dim) / 2)
+                bottom = int((height + min_dim) / 2)
+
+                # Обрезаем изображение, оставляя центральную часть
+                img_cropped = img.crop((left, top, right, bottom))
+
+                # Перезаписываем изображение
+                img_cropped_io = BytesIO()
+                img_cropped.save(img_cropped_io, format='JPEG')
+
+                user.photo.save(photo.name, ContentFile(img_cropped_io.getvalue()), save=False)
+
+            if commit:
+                user.save()
+            return user

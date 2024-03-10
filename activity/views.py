@@ -100,14 +100,14 @@ def add_game_dictionary(request):
     else:
         form = GameDictionaryForm()
     return render(request, 'activity/add_new_dictionary.html',
-                  {'form': form, 'title': 'Добавить дневник прохождения'})
+                  {'form': form, 'title': 'Добавить дневник прохождения', 'button_name': 'Добавить'})
 
 
 class UpdateDictionaryView(UserPassesTestMixin, UpdateView):
     model = GameDictionary
     form_class = GameDictionaryUpdateForm
     template_name = 'activity/add_new_dictionary.html'
-    extra_context = {'title': 'Изменить дневник прохождения'}
+    extra_context = {'title': 'Изменить дневник прохождения', 'button_name': 'Обновить'}
 
     def get_success_url(self):
         return reverse_lazy('activity:dictionary_page', kwargs={'id': self.object.id})

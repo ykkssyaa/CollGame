@@ -1,9 +1,13 @@
-<a href="{% url 'users:profile_collection' username=user_p.username %}?list={{ list.id }}">{{ list.name }}</a>
+
+<a href="{% url 'users:profile_collection' username=user_p.username %}?list={{ list.id }}"
+   class="btn btn-link fs-3">
+    {{ list.name }}
+</a>
 
 {% if user_p.pk == request.user.pk %}
-    <form action="{% url 'users:delete_list' %}" method="post">
+    <form action="{% url 'users:delete_list' %}" method="post" class="d-inline">
         {% csrf_token %}
         <input type="hidden" name="list_id" value="{{ list.id }}">
-        <button type="submit">Удалить</button>
+        <button type="submit" class="btn btn-danger">Удалить</button>
     </form>
 {% endif %}

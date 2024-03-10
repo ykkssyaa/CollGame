@@ -2,21 +2,19 @@
 {% load static %}
 {% block user_content %}
 
-    <div class="review_list">
-
+    <div class="review-list">
         <h2>Рецензии пользователя</h2>
-        <ul>
+        <ul class="list-group">
             {% for review in user_p.review_set.all %}
+                <li class="list-group-item">
 
-                <li> <h4><a href="{{ review.game.get_absolute_url }}" >{{ review.game.name }}</a></h4>
+                    <h4><a class="fs-2" href="{{ review.game.get_absolute_url }}">{{ review.game.name }}</a></h4>
                     {% include 'elements/activity/reviews_list_element.html' %}
-                </li>
 
+                </li>
             {% endfor %}
         </ul>
-
     </div>
 
     <script src="{% static 'js/like_review.js' %}"></script>
-
 {% endblock %}

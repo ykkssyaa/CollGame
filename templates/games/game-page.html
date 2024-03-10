@@ -2,65 +2,77 @@
 {% load static %}
 {% block content %}
 
-    <div class="game_info">
-        <h1>{{ game.name }}</h1>
-        <img src="{{    game.poster.url }}" style="width: 25%;" alt="{{ game.name }} poster"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="box_with_shadow">
+                    <h1>{{ game.name }}</h1>
+                    <img src="{{ game.poster.url }}" class="img-fluid" alt="{{ game.name }} poster"/>
 
-        <div class="main_game_info">
-            <h2>Описание</h2>
-            <p>
-                {{ game.description }}
-            </p>
+                    <div class="main_game_info mt-3">
+                        <h2>Описание</h2>
+                        <p>{{ game.description }}</p>
+
+                        <p class="studio"><b>Студия</b> - {{ game.studio }}</p>
+                    </div>
+
+                    <div class="additional_game_info mt-3">
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Теги:</h4>
+                                <div class="tag-list">
+                                    {% for tag in game.tags.names %}
+                                        <span class="tag">{{ tag }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <h4>Ссылки:</h4>
+                                <div class="btn-group" role="group">
+                                    {% for link in links %}
+                                        <a href="{{ link.link }}" class="btn btn-outline-secondary">{{ link.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <h4>Релизы:</h4>
+                        {% if releases %}
+                            <ul>
+                                {% for release in releases %}
+                                    <li><span class="badge bg-secondary">{{ release.platform.name }}</span>
+                                        - {{ release.release_date }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p>Релизов ещё нет</p>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-4 ms-md-auto">
+                {% include 'elements/user_game_panel.html' %}
+            </div>
         </div>
 
-        <div class="additional_game_info">
-
-            <p> <b>Студия</b> - {{ game.studio }}</p>
-
-            <h4>Теги: </h4>
-            <ul>
-                {% for tag in game.tags.names %}
-                <li>{{ tag }}</li>
-                {% endfor %}
-            </ul>
-
-            <h4> Ссылки: </h4>
-            <ul>
-                {% for link in links %}
-                <li><a href="{{ link.link }}">{{ link.name }}</a></li>
-                {% endfor %}
-            </ul>
-
-            <h4> Релизы: </h4>
-            {% if releases %}
-                <ul>
-                    {% for release in releases %}
-                    <li>{{ release.platform.name }} - {{ release.release_date }}</li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p>Релизов ещё нет</p>
-            {% endif %}
-
+        <div class="row">
+            <div class="col-md-8 m-2">
+                <div class="box_with_shadow mt-5">
+                    <h2>Рецензии на игру</h2>
+                    <ul>
+                        {% for review, like in reviews %}
+                            {% include 'elements/activity/reviews_list_element.html' %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
-
-    </div>
-
-    {% include 'elements/user_game_panel.html' %}
-
-    <div class="review_list">
-
-        <h2>Рецензии на игру</h2>
-        <ul>
-            {% for review, like in reviews %}
-
-                <li>
-                    {% include 'elements/activity/reviews_list_element.html' %}
-                </li>
-
-            {% endfor %}
-        </ul>
-
     </div>
 
     <script src="{% static 'js/like_review.js' %}"></script>
