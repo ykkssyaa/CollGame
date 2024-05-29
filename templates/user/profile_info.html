@@ -6,7 +6,7 @@
         {% if user_p.bio %}
             <div class="card">
                 <div class="card-body">
-                    {{ user_p.bio }}
+                    {{ user_p.bio|linebreaksbr }}
                 </div>
             </div>
         {% endif %}

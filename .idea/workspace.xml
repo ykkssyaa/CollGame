@@ -4,47 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="activity add, delete, update">
-      <change afterPath="$PROJECT_DIR$/static/css/game_page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/navigation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/review.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/user_profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/icons8-gamepad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/icons8-ps-controller-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/avatar_menu.js" afterDir="false" />
+    <list default="true" id="ed76f143-28af-4c72-8fe2-cb3b7839ec9e" name="Changes" comment="styles(css, bootstrap)">
       <change beforePath="$PROJECT_DIR$/.idea/CollGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CollGame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CollectGames/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CollectGames/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/activity/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/activity/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/activity/add_new_dictionary.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/activity/add_new_dictionary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/activity/add_review_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/activity/add_review_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/activity/dictionary_activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/activity/dictionary_activity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/activity/activity_element.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/activity/activity_element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/activity/reviews_list_element.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/activity/reviews_list_element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/games/games_list_element.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/games/games_list_element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/user_game_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/user_game_panel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/user_nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/user_nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/users/add_game_to_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/users/add_game_to_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/users/add_new_list_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/users/add_new_list_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/users/user_photo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/users/user_photo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements/users/userlist_element.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements/users/userlist_element.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/games/find-result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/games/find-result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/games/game-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/games/game-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/games/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/games/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/terms.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/terms.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/profile_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/profile_games.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_games.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/profile_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/profile_reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_reviews.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/profile_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/profile_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/register_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/register_success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,36 +51,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.CollGame.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.postgres: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IT/CollGame/templates/user&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;settings.editor.splitter.proportion&quot;: &quot;0.25280327&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.CollGame.executor": "Debug",
+    "Docker.docker-compose.yml.postgres: Compose Deployment.executor": "Run",
+    "Python.manage.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/IT/Python/TaskTracker",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.splitter.proportion": "0.25280327",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;,
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite",
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\IT\CollGame\templates\user" />
@@ -132,6 +99,29 @@
     </key>
   </component>
   <component name="RunManager" selected="Django Server.CollGame">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CollGame" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="CollGame" type="Python.DjangoServer" factoryName="Django server">
       <module name="CollGame" />
       <option name="ENV_FILES" value="" />
@@ -142,6 +132,7 @@
         <env name="DJANGO_SETTINGS_MODULE" value="CollectGames.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -178,6 +169,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.manage" />
         <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.postgres: Compose Deployment" />
       </list>
@@ -222,6 +214,36 @@
       <workItem from="1709717732948" duration="1292000" />
       <workItem from="1709729827994" duration="763000" />
       <workItem from="1709982845560" duration="80000" />
+      <workItem from="1710070755193" duration="45000" />
+      <workItem from="1710593603444" duration="599000" />
+      <workItem from="1710777530527" duration="18000" />
+      <workItem from="1710840310646" duration="4869000" />
+      <workItem from="1710925951591" duration="608000" />
+      <workItem from="1711016449771" duration="2858000" />
+      <workItem from="1711287049558" duration="49000" />
+      <workItem from="1711289187917" duration="1717000" />
+      <workItem from="1711304832299" duration="26000" />
+      <workItem from="1711890700396" duration="2545000" />
+      <workItem from="1711895692388" duration="1759000" />
+      <workItem from="1711916816945" duration="643000" />
+      <workItem from="1711972099485" duration="2925000" />
+      <workItem from="1712348792034" duration="50000" />
+      <workItem from="1712410940970" duration="349000" />
+      <workItem from="1712411390655" duration="282000" />
+      <workItem from="1712413636304" duration="654000" />
+      <workItem from="1712415761440" duration="53000" />
+      <workItem from="1712481434361" duration="9791000" />
+      <workItem from="1713259193248" duration="64000" />
+      <workItem from="1713288470096" duration="3289000" />
+      <workItem from="1713356499597" duration="600000" />
+      <workItem from="1713364977838" duration="318000" />
+      <workItem from="1713875879789" duration="676000" />
+      <workItem from="1715776194505" duration="696000" />
+      <workItem from="1716462246416" duration="602000" />
+      <workItem from="1716477416597" duration="33000" />
+      <workItem from="1716813066840" duration="6238000" />
+      <workItem from="1716909017725" duration="4864000" />
+      <workItem from="1716970871726" duration="5563000" />
     </task>
     <task id="LOCAL-00001" summary="init project">
       <option name="closed" value="true" />
@@ -423,7 +445,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709483495020</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="styles(css, bootstrap)">
+      <option name="closed" value="true" />
+      <created>1710070786622</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1710070786622</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +471,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init project" />
     <MESSAGE value="init module" />
     <MESSAGE value="little fixes and settings" />
     <MESSAGE value="delegate urls" />
@@ -466,6 +495,10 @@
     <MESSAGE value="deleting games from lists, collection" />
     <MESSAGE value="edit profile page" />
     <MESSAGE value="activity add, delete, update" />
-    <option name="LAST_COMMIT_MESSAGE" value="activity add, delete, update" />
+    <MESSAGE value="styles(css, bootstrap)" />
+    <option name="LAST_COMMIT_MESSAGE" value="styles(css, bootstrap)" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CollGame$manage.coverage" NAME="manage Coverage Results" MODIFIED="1716815540227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

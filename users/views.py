@@ -47,6 +47,8 @@ def create_default_lists(user: User):
 
 
 def register(request):
+    form = RegisterUserForm()
+
     if request.method == 'POST':
         form = RegisterUserForm(request.POST, request.FILES)
         if form.is_valid():
@@ -61,7 +63,6 @@ def register(request):
     if request.user.is_authenticated:
         return redirect(reverse_lazy_lazy(request.user.get_username()))
 
-    form = RegisterUserForm()
     return render(request, 'user/register.html', {'form': form, 'title': 'Регистрация'})
 
 

@@ -8,7 +8,7 @@
         <h2>Дневник прохождения "{{ dictionary.name }}"</h2>
         <h3>Игра <a href="{{ dictionary.game.get_absolute_url }}"> {{ dictionary.game.name }} </a></h3>
         <div class="description mb-4">
-            {{ dictionary.description }}
+            {{ dictionary.description|linebreaksbr }}
         </div>
 
         {% if dictionary.user.pk == request.user.pk %}
